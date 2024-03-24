@@ -1,0 +1,59 @@
+.parallax {
+    height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100vw;
+}
+
+.mask-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.info-text-Left{
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    width: 30%;
+    font-size: 1.7rem;
+    color: white;
+}
+
+.info-text-right{
+    position: absolute;
+    top: 45%;
+    right: 10%;
+    font-size: 1.7rem;
+    color: white;
+    width: 40%;
+}
+
+.info-text-Left-bottom{
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    width: 20%;
+    font-size: 1.7rem;
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .info-text-Left {
+        font-size: 1rem;
+        width: 50%;
+    }
+    .info-text-Left-bottom {
+        font-size: 1rem;
+        width: 50%;
+    }
+    .info-text-right {
+        font-size: 1rem;
+        width: 50%;
+    }
+}

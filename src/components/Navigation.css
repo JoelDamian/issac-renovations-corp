@@ -1,0 +1,45 @@
+@media only screen and (max-width: 700px) {
+    .phone-styles {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        text-align: center;
+        margin-top: 20px;
+        height: 100%;
+    }
+    .phone-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100vw;
+    }
+    .logo-container {
+        width: 100vw;
+        height: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30%;
+    }
+    .small-logo {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 0px;
+    }
+}
+
+.phone-styles {
+    margin-top: 0px;
+}
+
+.small-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    width: 144px;
+    height: 144px;
+}
