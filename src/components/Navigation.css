@@ -59,19 +59,6 @@
   color: #eb2424;
 }
 
-.nav-cta {
-  background: #eb2424 !important;
-  color: #fff !important;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.nav-cta:hover {
-  background: #c51010 !important;
-  color: #fff !important;
-}
-
 @media (max-width: 768px) {
   .nav-inner {
     flex-direction: column;
