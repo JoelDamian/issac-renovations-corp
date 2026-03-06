@@ -2,11 +2,9 @@
 
 import React from 'react';
 
-const SmoothScrollLink = ({ href, children }) => {
-
+const SmoothScrollLink = ({ href, children, className = '' }) => {
   const handleClick = (event) => {
     event.preventDefault();
-
     const targetElement = document.querySelector(href);
     if (targetElement) {
       window.scrollTo({
@@ -17,7 +15,7 @@ const SmoothScrollLink = ({ href, children }) => {
   };
 
   return (
-    <a href={href} onClick={handleClick} className='hover:text-cinnabar-900'>
+    <a href={href} onClick={handleClick} className={className || 'hover:text-cinnabar-900'}>
       {children}
     </a>
   );

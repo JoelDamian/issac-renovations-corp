@@ -1,76 +1,49 @@
 'use client';
 
-import { useId } from 'react';
 import './ContactUs.css';
-import { Input } from '../input/Input';
-import { CiUser } from 'react-icons/ci';
-import { MdOutlineAlternateEmail } from 'react-icons/md';
-import { FaPhone } from 'react-icons/fa';
-import { TextArea } from '../text-area/TextArea';
-import { MdOutlineMessage } from 'react-icons/md';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { ScrollReveal } from '../scroll-reveal/ScrollReveal';
+
+const contactCards = [
+  {
+    icon: FaPhone,
+    label: 'PHONE',
+    value: '+1 21355 35351',
+  },
+  {
+    icon: FaEnvelope,
+    label: 'EMAIL',
+    value: 'isacrenovation@gmail.com',
+  },
+  {
+    icon: FaMapMarkerAlt,
+    label: 'OFFICE',
+    value: 'Springfield, Illinois, USA',
+  },
+];
 
 export function ContactUs() {
-  const emailId = useId();
-  const phoneNumberId = useId();
-  const name = useId();
-  const Message = useId();
-
-  const handleSubmitForm = () => {};
-
   return (
-    <section className='contact-us-container'>
-      <div className='section-contact-container '>
-        <div className='title-container'>
-          <h1 className='title-gallery'>Contact<p className='text-cinnabar-600 ml-1'>Us</p></h1>
+    <section className='contact-section' id='contact-section'>
+      <ScrollReveal>
+      <div className='contact-wrap'>
+        <h2 id="contact-heading" className='contact-title'>Contact Us</h2>
+        <p className='contact-intro'>
+          Ready to start your renovation project? Our team is standing by to help you transform your home. Reach out to us through any of the channels below.
+        </p>
+        <div className='contact-cards'>
+          {contactCards.map(({ icon: Icon, label, value }) => (
+            <div key={label} className='contact-card'>
+              <span className='contact-card-icon'>
+                <Icon />
+              </span>
+              <span className='contact-card-label'>{label}</span>
+              <span className='contact-card-value'>{value}</span>
+            </div>
+          ))}
         </div>
-
-        <form onSubmit={handleSubmitForm} className='form-container'>
-          <div className='input-container'>
-            <Input
-              type={'text'}
-              id={name}
-              style={{ borderRadius: '5px' }}
-              color='grey'
-              placeholder='Name'
-            >
-              <CiUser size={25} color='grey' />
-            </Input>
-            <Input
-              type={'email'}
-              id={emailId}
-              style={{ borderRadius: '5px' }}
-              color='grey'
-              placeholder='Email'
-            >
-              <MdOutlineAlternateEmail size={25} color='grey' />
-            </Input>
-            <Input
-              type={'text'}
-              id={phoneNumberId}
-              style={{ borderRadius: '5px' }}
-              color='grey'
-              placeholder='Phone Number'
-            >
-              <FaPhone size={25} color='grey' />
-            </Input>
-          </div>
-          <TextArea
-            type={'text'}
-            id={Message}
-            style={{ borderRadius: '5px' }}
-            color='grey'
-            placeholder='Message'
-            rows='4'
-          >
-            <MdOutlineMessage size={25} color='grey' />
-          </TextArea>
-          <div className='container-button'>
-            <button type='submit' className='button bg-cinnabar-600'>
-              SUBMIT
-            </button>
-          </div>
-        </form>
       </div>
+      </ScrollReveal>
     </section>
   );
 }

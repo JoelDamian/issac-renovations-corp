@@ -1,13 +1,15 @@
-import { FaBrush, FaClipboardList, FaBuilding, FaTools, FaFire, FaKitchenSet } from 'react-icons/fa';
-import { MdKitchen } from "react-icons/md";
+'use client';
+
+import { FaThLarge, FaCouch, FaPaintBrush, FaTools } from 'react-icons/fa';
+import { ScrollReveal } from '../scroll-reveal/ScrollReveal';
 import './Services.css';
 
 function ServiceCard({ service }) {
   return (
     <div className='service-card'>
-      <div className='service-icon-container'>{service.icon}</div>
-      <p className='service-title-card text-cinnabar-600'>{service.title}</p>
-      <p className='service-subtitle-card'>{service.text}</p>
+      <div className='service-icon-box'>{service.icon}</div>
+      <h3 className='service-card-title'>{service.title}</h3>
+      <p className='service-card-desc'>{service.text}</p>
     </div>
   );
 }
@@ -15,50 +17,38 @@ function ServiceCard({ service }) {
 export function ServicesSection() {
   const services = [
     {
-      icon: <FaBrush className='service-icon' />,
-      title: 'Painting with Benjamin Moore',
-      text: 'Elevate Your Space: Precision Painting with Benjamin Moore Excellence.',
+      icon: <FaThLarge className='service-icon' />,
+      title: 'Flooring',
+      text: 'Expert installation of Hardwood, Tile, and Laminate flooring to elevate your space.',
     },
     {
-      icon: <FaClipboardList className='service-icon' />,
-      title: 'Sheetrock Installation',
-      text: 'Transforming Spaces: Expert Sheetrock Installation Services.',
+      icon: <FaCouch className='service-icon' />,
+      title: 'Furniture Installation',
+      text: 'Custom cabinetry and professional assembly services for every room in your home.',
     },
     {
-      icon: <FaBuilding className='service-icon' />,
-      title: 'Plastering Perfection',
-      text: 'Timeless Craftsmanship: Artful Plastering for Lasting Walls.',
+      icon: <FaPaintBrush className='service-icon' />,
+      title: 'Painting',
+      text: 'Full interior and exterior painting services with premium finishes and attention to detail.',
     },
     {
-      icon: <FaTools  className='service-icon' />,
-      title: 'Molding Makeovers',
-      text: 'Crowning Glory: Molding Replacement and Installation Services.',
-    },
-    {
-      icon: <MdKitchen  className='service-icon' />,
-      title: 'Kitchen Cabinets Expertise',
-      text: 'Culinary Elegance: Professional Kitchen Cabinet Installations.',
-    },
-    {
-      icon: <FaFire  className='service-icon' />,
-      title: 'Fire Escapes Refinement',
-      text: 'afety and Style: Sanded, Primed, Painted Fire Escapes for $800.',
+      icon: <FaTools className='service-icon' />,
+      title: 'Fire Escape',
+      text: 'Reliable installation and maintenance to ensure the safety and compliance of your property.',
     },
   ];
+
   return (
-    <section className='section-service-container'>
-      <div className='service-title'>
-        <p className='service-subtitle text-cinnabar-600'>WHAT WE DO</p>
-        <h1 className='service-title'>OUR SERVICES</h1>
-      </div>
-      <div className='service-container'>
-        <ServiceCard service={services[0]} />
-        <ServiceCard service={services[1]} />
-        <ServiceCard service={services[2]} />
-        <ServiceCard service={services[3]} />
-        <ServiceCard service={services[4]} />
-        <ServiceCard service={services[5]} />
-      </div>
+    <section className='services-section' id='services-section'>
+      <ScrollReveal>
+        <h2 className='services-heading'>Our Professional Services</h2>
+        <div className='services-underline' />
+        <div className='services-grid'>
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
+          ))}
+        </div>
+      </ScrollReveal>
     </section>
   );
 }

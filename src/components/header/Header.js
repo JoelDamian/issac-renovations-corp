@@ -1,82 +1,23 @@
 'use client';
+import SmoothScrollLink from '../smooth-scroll/SmoothScrollLink';
 import './Header.css';
-import { motion } from 'framer-motion';
-export function Header() {
-  const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible,
-  };
+export function Header() {
   return (
-    <motion.div>
-      <div className='image-container'>
-        <img
-          alt='principal'
-          src={'/images/principal.webp'}
-          className='responsive-image'
-        />
-        <div className='mask'></div>
-        <motion.article
-          className='header-text'
-          initial='hidden'
-          animate='visible'
-          exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
-        >
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible,
-            }}
-            style={{
-              '--base-width': '24vw',
-              top: '-18vw',
-            }}
-          >
-            FULLY INSURED
-          </motion.h1>
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible,
-            }}
-            style={{
-              '--base-width': '24vw',
-              top: '-18vw',
-              marginTop: 20
-            }}
-          >
-            FREE ESTIMATES
-          </motion.h1>
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible,
-            }}
-            style={{
-              '--base-width': '24vw',
-              top: '-18vw',
-              marginTop: 20
-            }}
-          >
-            SATISFACTION GUARANTEED
-          </motion.h1>
-          <motion.h6
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible,
-            }}
-            style={{
-              '--base-width': '24vw',
-              fontSize: 16,
-            }}
-            className='header-subtitle'
-          >
-            The result will be a great looking home for you to enjoy for many years to come. 
-          </motion.h6>
-        </motion.article>
+    <header className='hero'>
+      <div className='hero-bg' />
+      <div className='hero-mask' />
+      <div className='hero-content'>
+        <h1 className='hero-title'>
+          Transforming homes with <span className='hero-title-accent'>precision</span> and care.
+        </h1>
+        <p className='hero-subtitle'>
+          With over 10 years of experience, we provide high-quality home renovations tailored to your unique needs and lifestyle.
+        </p>
+        <SmoothScrollLink href='#contact-section' className='hero-cta'>
+          Book a Consultation
+        </SmoothScrollLink>
       </div>
-    </motion.div>
+    </header>
   );
 }

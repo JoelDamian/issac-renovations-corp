@@ -1,45 +1,90 @@
-@media only screen and (max-width: 700px) {
-    .phone-styles {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        text-align: center;
-        margin-top: 20px;
-        height: 100%;
-    }
-    .phone-items{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 100vw;
-    }
-    .logo-container {
-        width: 100vw;
-        height: 25px;
-        justify-content: center;
-        align-items: center;
-        margin-left: 30%;
-    }
-    .small-logo {
-        width: 25px;
-        height: 25px;
-        margin-bottom: 0px;
-    }
+.nav-bar {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.phone-styles {
-    margin-top: 0px;
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.small-logo {
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
+.nav-logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
 }
 
-.logo-container {
-    width: 144px;
-    height: 144px;
+.logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.nav-logo-text {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #1f2937;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #eb2424;
+}
+
+.nav-cta {
+  background: #eb2424 !important;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.nav-cta:hover {
+  background: #c51010 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-logo-text {
+    display: none;
+  }
 }

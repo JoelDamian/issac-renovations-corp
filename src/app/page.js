@@ -3,21 +3,29 @@ import { ContactUs } from "@/components/contact-us/ContactUs";
 import { Footer } from "@/components/footer/Footer";
 import { Gallery } from "@/components/gallery/Gallery";
 import { Header } from "@/components/header/Header";
-import { Parallax } from "@/components/parallax/Parallax";
+import { Commitment } from "@/components/commitment/Commitment";
 import { ServicesSection } from "@/components/services-section/Services";
 import WhatsAppButton from "@/components/whatsaap-button/Whatsaap";
 
 export default function Home() {
   return (
     <>
-    <Navigation></Navigation>
-    <div id="header-section"><Header></Header></div>
-    <div id="services-section"><ServicesSection ></ServicesSection></div>
-    <div id="parallax-section"><Parallax ></Parallax></div>
-    <div id="gallery-section"><Gallery></Gallery></div>
-    <div id="contact-section"> <ContactUs id="contact-section"></ContactUs></div>
-    <WhatsAppButton/>
-    <Footer></Footer>
+      <Navigation />
+      <main id="main-content">
+        <header id="header-section" aria-label="Hero">
+          <Header />
+        </header>
+        <ServicesSection />
+        <Commitment />
+        <section id="gallery-section" aria-labelledby="gallery-heading">
+          <Gallery />
+        </section>
+        <section id="contact-section" aria-labelledby="contact-heading">
+          <ContactUs />
+        </section>
+      </main>
+      <WhatsAppButton />
+      <Footer />
     </>
   );
 }
