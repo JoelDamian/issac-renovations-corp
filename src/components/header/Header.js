@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import SmoothScrollLink from '../smooth-scroll/SmoothScrollLink';
+import { openWhatsApp } from '../whatsaap-button/Whatsaap';
 import './Header.css';
 
 const fadeUp = {
@@ -40,9 +40,9 @@ export function Header() {
           variants={fadeUp}
           transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <SmoothScrollLink href='#contact-section' className='hero-cta'>
+          <button type="button" className='hero-cta' onClick={() => openWhatsApp()}>
             Book a Consultation
-          </SmoothScrollLink>
+          </button>
         </motion.div>
       </motion.div>
     </header>

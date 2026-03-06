@@ -14,7 +14,6 @@ export function Navigation() {
         <div className='nav-links'>
           <SmoothScrollLink href='#services-section'>Services</SmoothScrollLink>
           <SmoothScrollLink href='#gallery-section'>Portfolio</SmoothScrollLink>
-          <SmoothScrollLink href='#reviews-section'>Reviews</SmoothScrollLink>
           <SmoothScrollLink href='#contact-section'>Contact Us</SmoothScrollLink>
         </div>
       </div>

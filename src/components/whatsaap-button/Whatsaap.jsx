@@ -2,20 +2,17 @@
 import { BsWhatsapp } from "react-icons/bs";
 import './Whatsaap.css';
 
-const WhatsAppButton = () => {
-  const handleWhatsAppClick = () => {
-    // Define the WhatsApp message
-    const message = "Hello, I'd like to chat with you!";
-    // Define the phone number (replace with your desired phone number)
-    const phoneNumber = "+16464138490";
-    // Construct the WhatsApp URL
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    // Open the WhatsApp URL in a new tab
-    window.open(url, '_blank');
-  };
+export const WHATSAPP_PHONE = "+16464138490";
+export const WHATSAPP_DEFAULT_MESSAGE = "Hello! I want to get a free estimate!";
 
+export function openWhatsApp(message = WHATSAPP_DEFAULT_MESSAGE) {
+  const url = `https://wa.me/${WHATSAPP_PHONE.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+
+const WhatsAppButton = () => {
   return (
-    <button className="whatsapp-button" onClick={handleWhatsAppClick}>
+    <button className="whatsapp-button" onClick={() => openWhatsApp()} aria-label="Open WhatsApp">
       <BsWhatsapp size={25}/>
     </button>
   );
